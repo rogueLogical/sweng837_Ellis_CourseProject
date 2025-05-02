@@ -126,3 +126,9 @@ Since they are Database Entity Classes, Opponent objects only exist during the p
 #### Update Deck Function
 ![ActDiag_UpdateDeck](./images/FP_ActivityDiagram_UpdateDeck.png)
 
+### Component Diagram
+![ComponenetDiagram](./images/FP_ComponentDiagram.png)
+
+### Deployment Diagram
+![DeploymentDiagram](./images/FP_DeploymentDiagram.png)
+
