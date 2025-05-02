@@ -98,10 +98,31 @@ The following Domain Class diagram is split into multiple views due to the large
 #### User Management View
 ![DomainClassDiagram_User](./images/FP_DesignClassDiagram_UserManagement.png)
 #### TCG Data Management View
-![DomainClassDiagram_User](./images/FP_DesignClassDiagram_TCGDataManagement.png)
+![DomainClassDiagram_TCG](./images/FP_DesignClassDiagram_TCGDataManagement.png)
 #### Game Result Management View
-![DomainClassDiagram_User](./images/FP_DesignClassDiagram_GameResultManagement.png)
+![DomainClassDiagram_Game](./images/FP_DesignClassDiagram_GameResultManagement.png)
 #### Analytics Management View
-![DomainClassDiagram_User](./images/FP_DesignClassDiagram_AnalysisManagement.png)
+![DomainClassDiagram_Analytics](./images/FP_DesignClassDiagram_AnalysisManagement.png)
 
-### 
+### Sequence Diagrams
+Here are some example sequence diagrams for core system Use Cases.
+#### Record Game Result
+![SD_RecordGame](./images/FP_SeqDiag_RecordGameResult.png)
+
+#### Create Deck
+![SD_CreateDeck](./images/FP_SeqDiag_CreateDeck.png)
+
+#### Get Matchup Stats
+![SD_GetMatchupStats](./images/FP_SeqDiag_GetMatchupStats.png)
+
+### State Diagram
+The MetaDex system is designed to operate in a stateless manner whenever possible, so most of the classes do not have states. However the Opponent class does have two states as defined below.
+#### Opponent
+![StateDiag_Opponent](./images/FP_StateDiagram_Opponent.png)
+
+Since they are Database Entity Classes, Opponent objects only exist during the processing of individual transactions. The rest of the time it's data is stored in the database for retrieval.
+
+### Activity Diagram
+#### Update Deck Function
+![ActDiag_UpdateDeck](./images/FP_ActivityDiagram_UpdateDeck.png)
+
