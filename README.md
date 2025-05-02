@@ -132,3 +132,18 @@ Since they are Database Entity Classes, Opponent objects only exist during the p
 ### Deployment Diagram
 ![DeploymentDiagram](./images/FP_DeploymentDiagram.png)
 
+## Skeleton Classes
+These skeleton classes are provided as example classes from each layer of classes.
+
+[Skeleton Class Examples](./src/skeleton_class_examples/)
+
+## Database Table Definitions
+
+#### GameResult Table Definition
+Sample Row:
+| gameResultID | outcome | dateTime | notes | numberOfTurns | wentFirst | userStanding | userId | deckId | tcgId | formatId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| j2398fji09h30d8h | Win | 2025-04-22T15:35:23 | Opponent Conceded | 5 | True | 1 | hf498209jf983f | 4f8039j0f0834f | 2f90h308h98h4f | ufh347f039hf0 |
+
+[GameResult Table Definition](./src/db_table_definition/GameResult.sql)
+
