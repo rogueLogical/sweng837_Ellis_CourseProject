@@ -9,7 +9,7 @@ Fans of trading card games have many useful tools at their disposal today. They 
 
 ## Requirements
 
-### Functional Requirements
+### 1. Functional Requirements
 
 - 1.1. User Management
     - 1.1.1. The system shall provide a way for users to create an account.
@@ -46,17 +46,62 @@ Fans of trading card games have many useful tools at their disposal today. They 
     - 1.7.2. The system shall maintain a database of cards for each supported TCG.
     - 1.7.3. The system shall allow administrators to maintain an up to date list of common formats for each TCG.
 
-### Non-Functional Requirements
+### 2. Non-Functional Requirements
+
+- 2.1. Usability
+    - 2.1.1. The system shall provide an intuitive user interface.
+    - 2.1.2. The system shall provide a quick process for recording game results with minimal input requirements.
+    - 2.1.3. The system shall support common display devices like phones, tablets, and web browsers.
+- 2.2. Reliability
+    - 2.2.1. The system shall reliably store all user entered data without losing anything.
+    - 2.2.2. The system shall operate with minimal downtime, remaining available for users 99.999% of the time.
+- 2.3. Performance
+    - 2.3.1. The process of recording a game result shall respond to user input quickly.
+    - 2.3.2. The system shall find and display game result data and visualizations in a timely manner.
+- 2.4. Scalability
+    - 2.3.1. The system shall be designed to support growth in user count, as well as data storage.
+- 2.5. Security
+    - 2.5.1. The system shall protect user accounts and user data from unauthorized access.
+    - 2.5.2. The system shall employ secure methods for user authorization.
+- 2.6. Maintainability
+    - 2.6.1. The system shall be designed and built in a way that enables maintainability and growth in the future.
+- 2.7. Compatibility
+    - 2.7.1. The system shall be compatible with common operating systems for PCs and Mobile Phones.
+    - 2.7.2. The system shall support compatibility with common web browsers.
 
 ## UML Diagrams
 
 ### Use Case Diagram
-![UseCase](./images/light/FP_UseCaseDiagram.png)
+![UseCase](./images/FP_UseCaseDiagram.png)
 
-<picture>
-    <source srcset="./images/dark/FP_UseCaseDiagram_dark.png"  media="(prefers-color-scheme: dark)">
-    <source srcset="./images/light/FP_UseCaseDiagram.png  media="(prefers-color-scheme: light)">
-    <img src="logo.png">
-</picture>
+Main customer facing Use Cases cover user account, deck, opponent, and game result management, as well as game result visualization.
+
+These use cases are supported by system administrators, as well as external APIs for obtaining deck and card data.
+
+### Domain Model
+![DomainModel](./images/FP_DomainModel.png)
+
+
+
+### Design Class Diagram
+Since this system is mostly about data management and data visualization, it is broken down into multiple layers to simplify the maintenance, and access of all the different data types.
+
+The layers are as follows:
+- Request Layer - Handles incoming API calls, and formats responses before sending. Contains no core business logic.
+- Service Layer - These classes handle the core business logic. They are the controller classes for the entire system. This is where use case functionality is maintained.
+- Data Management Layer - The classes in this layer handle data retrieval and maintenance operations. They provide functions to save system data to the database, and return objects back to the service layer to support business goals.
+- Database Entity Layer - These are the domain based classes that are passed around between the above layers to achieve business goals. They represent real world objects or concepts, and are instantiated by the Data Management Layer Classes based on information stored in the system database.
+
+The following Domain Class diagram is split into multiple views due to the large number of classes.
+
+![DomainClassDiagram](./images/FP_DesignClassDiagram.png)
+#### User Management View
+![DomainClassDiagram_User](./images/FP_DesignClassDiagram_UserManagement.png)
+#### TCG Data Management View
+![DomainClassDiagram_User](./images/FP_DesignClassDiagram_TCGDataManagement.png)
+#### Game Result Management View
+![DomainClassDiagram_User](./images/FP_DesignClassDiagram_GameResultManagement.png)
+#### Analytics Management View
+![DomainClassDiagram_User](./images/FP_DesignClassDiagram_AnalysisManagement.png)
 
 ### 
