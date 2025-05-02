@@ -145,5 +145,5 @@ Sample Row:
 |---|---|---|---|---|---|---|---|---|---|---|
 | j2398fji09h30d8h | Win | 2025-04-22T15:35:23 | Opponent Conceded | 5 | True | 1 | hf498209jf983f | 4f8039j0f0834f | 2f90h308h98h4f | ufh347f039hf0 |
 
-[GameResult Table Definition](./src/db_table_definition/GameResult.sql)
+[GameResult Table Definition](./src/db_table_definition/GameResults.sql)
 
