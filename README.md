@@ -95,6 +95,12 @@ The layers are as follows:
 The following Design Class diagram is split into multiple views due to the large number of classes.
 #### Overall View
 ![DesignClassDiagram](./images/FP_DesignClassDiagram.png)
+
+Design patterns Used:
+- GRASP Controller Pattern: Service Layer classes operate as controllers for their respective Use Cases.
+- GRASP Pure Fabrication Pattern and SOLID Single Responsibility Principle: The Request Layer, Service Layer, and Data Management layer classes are all pure fabrications implemented to separate concerns into different classes. This way each class only has one reason to change. This design choice also embraces the DRY design principle, as it improves code re-use.
+- GRASP Creator Pattern: The Data Management Layer classes embody the Creator pattern for all the Database Entity Layer classes. These classes have the ability to connect to the database, and obtain all the information to instantiate new Database Entity Objects, which are then used by the service Layer classes to perform business logic.
+
 #### User Management View
 ![DesignClassDiagram_User](./images/FP_DesignClassDiagram_UserManagement.png)
 #### TCG Data Management View
@@ -129,8 +135,12 @@ Since they are Database Entity Classes, Opponent objects only exist during the p
 ### Component Diagram
 ![ComponenetDiagram](./images/FP_ComponentDiagram.png)
 
+Each of the 4 main system components encompases a vertical slice of user facing functionality. Those components are then supported by an APIGateway component, which can perform load balancing and security functions. They are also supported by a Database manager component, which can provide data persistence and consistency between components.
+
 ### Deployment Diagram
 ![DeploymentDiagram](./images/FP_DeploymentDiagram.png)
+
+The deployed system follows microservice design patterns, using an API gateway to support load balancing, and containerization to enable scaling. Each service container includes it's own DatabaseManager and database instance to speed up response time and reduce network traffic (Sidecar Pattern). Finally, a main database node handles maintenance of the primary database, and synchronization between all other database instances.
 
 ## Skeleton Classes
 These skeleton classes are provided as example classes from each layer of classes.
@@ -138,9 +148,13 @@ These skeleton classes are provided as example classes from each layer of classe
 [Skeleton Class Examples](./src/skeleton_class_examples/)
 
 ## Database Table Definitions
+Our system will use a structured database design approach to support fast and reliable data analysis. Since the system needs to access a lot of data, and needs to be able to filter and sort that data to produce visualizations and user facing reports, we need to store all of our data in well defined formats.
 
-#### GameResult Table Definition
+Due to this, the system will use a SQL data storage solution, and will have clear table definitions for all stored data.
+
+### Example: GameResult Table Definition
 Sample Row:
+
 | gameResultID | outcome | dateTime | notes | numberOfTurns | wentFirst | userStanding | userId | deckId | tcgId | formatId |
 |---|---|---|---|---|---|---|---|---|---|---|
 | j2398fji09h30d8h | Win | 2025-04-22T15:35:23 | Opponent Conceded | 5 | True | 1 | hf498209jf983f | 4f8039j0f0834f | 2f90h308h98h4f | ufh347f039hf0 |
