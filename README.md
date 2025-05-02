@@ -149,7 +149,7 @@ Each of the 4 main system components encompases a vertical slice of user facing 
 ### Deployment Diagram
 ![DeploymentDiagram](./images/FP_DeploymentDiagram.png)
 
-The deployed system follows microservice design patterns, using an API gateway to support load balancing, and containerization to enable scaling. Each service container includes it's own DatabaseManager and database instance to speed up response time and reduce network traffic (Sidecar Pattern). Finally, a main database node handles maintenance of the primary database, and synchronization between all other database instances.
+The deployed system follows microservice design architecture, using an API gateway to support load balancing, and containerization to enable scaling. Each service container includes it's own DatabaseManager and database instance to speed up response time and reduce network traffic (Sidecar Pattern). Finally, a main database node handles maintenance of the primary database, and synchronization between all other database instances.
 
 ## Skeleton Classes
 These skeleton classes are provided as example classes from each layer of classes.
@@ -169,4 +169,15 @@ Sample Row:
 | j2398fji09h30d8h | Win | 2025-04-22T15:35:23 | Opponent Conceded | 5 | True | 1 | hf498209jf983f | 4f8039j0f0834f | 2f90h308h98h4f | ufh347f039hf0 |
 
 [GameResult Table Definition](./src/db_table_definition/GameResults.sql)
+
+## Conclusion & Next Steps
+When implemented, this system will begin to provide trading card game players valuable feedback on how they are performing at their favorite games. It will allow them the hindsight required to make educated deckbuilding and in-game decisions in the future.
+
+**Deck Improvement Recommendations**: We can take this one step further by then making algorithym based recommendations to our users. The MetaDex system will have all the data, including which cards other players are playing in similar decks. We could tell users that others with similar decks are winning more often with certain cards in their decks.
+
+**Friends List**: We can add the option for a friends list so that users can share their decks and their records with their friends.
+
+**Deck Version Tracking**: As time goes on, users will update their decks and will want a way to track if their improvements are helping their record or not. We should add a capability to record version changes for each deck and show those version changes in the resulting record visualizations.
+
+**Other Stats**: Over the long run, we can add other interesting stats, like a user's most played deck, and most played against opponent. These additional insights can further improve the user experience.
 
