@@ -137,6 +137,15 @@ Since they are Database Entity Classes, Opponent objects only exist during the p
 
 Each of the 4 main system components encompases a vertical slice of user facing functionality. Those components are then supported by an APIGateway component, which can perform load balancing and security functions. They are also supported by a Database manager component, which can provide data persistence and consistency between components.
 
+**Component Descriptions:**
+- **Client**: Provides User Interface
+- **APIGateway**: Provides API Endpoints, acts as a reverse proxy, and load balancer for instances of the other components. Uses the UserManager component to authorize incoming requests.
+- **UserManager**: Serves all User Account management Use Cases. Create, Manage, Update, Delete accounts, as well as Login, and Authentication functions.
+- **TCGDataManager**: Serves all TCG Data management Use Cases needed to manage TCG Metadata like TCGs and Game Formats. Also handles Deck data related use cases, like adding, importing, deleting, and editing decks, as well as searching for cards.
+- **GameResultManager**: Serves all Game Result tracking related Use Cases, like Recording, Updating, and Deleting Game Results, as well as tracking specific opponents.
+- **AnalyticsManager**: Serves all Data Visualization and Reporting use cases. This is the component that uses all the recorded data in the system to show user's their records and matchup statistics.
+- **DatabaseManager**: Handles data persistence and synchronization between nodes.
+
 ### Deployment Diagram
 ![DeploymentDiagram](./images/FP_DeploymentDiagram.png)
 
