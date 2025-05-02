@@ -92,17 +92,17 @@ The layers are as follows:
 - Data Management Layer - The classes in this layer handle data retrieval and maintenance operations. They provide functions to save system data to the database, and return objects back to the service layer to support business goals.
 - Database Entity Layer - These are the domain based classes that are passed around between the above layers to achieve business goals. They represent real world objects or concepts, and are instantiated by the Data Management Layer Classes based on information stored in the system database.
 
-The following Domain Class diagram is split into multiple views due to the large number of classes.
-
-![DomainClassDiagram](./images/FP_DesignClassDiagram.png)
+The following Design Class diagram is split into multiple views due to the large number of classes.
+#### Overall View
+![DesignClassDiagram](./images/FP_DesignClassDiagram.png)
 #### User Management View
-![DomainClassDiagram_User](./images/FP_DesignClassDiagram_UserManagement.png)
+![DesignClassDiagram_User](./images/FP_DesignClassDiagram_UserManagement.png)
 #### TCG Data Management View
-![DomainClassDiagram_TCG](./images/FP_DesignClassDiagram_TCGDataManagement.png)
+![DesignClassDiagram_TCG](./images/FP_DesignClassDiagram_TCGDataManagement.png)
 #### Game Result Management View
-![DomainClassDiagram_Game](./images/FP_DesignClassDiagram_GameResultManagement.png)
+![DesignClassDiagram_Game](./images/FP_DesignClassDiagram_GameResultManagement.png)
 #### Analytics Management View
-![DomainClassDiagram_Analytics](./images/FP_DesignClassDiagram_AnalysisManagement.png)
+![DesignClassDiagram_Analytics](./images/FP_DesignClassDiagram_AnalysisManagement.png)
 
 ### Sequence Diagrams
 Here are some example sequence diagrams for core system Use Cases.
