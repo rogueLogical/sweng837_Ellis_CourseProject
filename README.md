@@ -1,11 +1,11 @@
 # MetaDex - TCG Game Tracker
 
-## Mission Statement
-The goal of this project is to provide a simple way for players of trading card games to track their game outcomes, and then use that data to provide those users meaningful visualizations of the data, to help them improve over time.
-
 ## Problem Statement 
 
 Fans of trading card games have many useful tools at their disposal today. They have online storefronts where they can order any card that exists, card search engines, deck building tools, and endless articles describing specific strategies. However, there is currently a gap in services when it comes to tracking game outcomes at a casual play level. Currently, players who desire to track their win/loss rate must write their game results down on paper or create their own custom tracking spreadsheet. This lack of data infrastructure causes players to make bad decisions both during games, and also when purchasing cards. With no central database of game results to reference, players have limited information available when deciding which strategy to invest their hard-earned money in. Currently, due to the state of the industry, players make decisions based on the results posted by professionals, which may lead to vastly different outcomes at a casual play level. A software solution to this problem must provide a quick, intuitive, and reliable way to record game results, while storing that data in a scalable, filterable database. Then the solution must provide clear visualizations of the stored game results data back to users. The system should also connect with other services which are already well adopted by the trading card game community, as that will make using this new tool as seamless as possible for users. 
+
+## Mission Statement
+The goal of this project is to provide a simple way for players of trading card games to record their game results, and then use that data to provide meaningful visualizations, to help those users improve over time.
 
 ## Requirements
 
